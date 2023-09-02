@@ -26,8 +26,10 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <section>{user ? <ChatRoom /> : <SignIn />}</section>
+                <h1>🥚🍳💬</h1>
+                <SignOut />
             </header>
+            <section>{user ? <ChatRoom /> : <SignIn />}</section>
         </div>
     );
 }
@@ -44,7 +46,7 @@ function SignIn() {
 function SignOut() {
     return (
         auth.currentUser && (
-            <button onClick={() => auth.signOut()}>Sign Out</button>
+            <button onClick={() => auth.signOut()}>Sign Out 🐥</button>
         )
     );
 }
@@ -87,7 +89,7 @@ function ChatRoom() {
                     value={formValue}
                     onChange={(e) => setFormValue(e.target.value)}
                 />
-                <button type="submit">Send🐣</button>
+                <button type="submit">Send 🐣</button>
             </form>
         </>
     );
