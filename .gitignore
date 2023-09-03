@@ -6,11 +6,14 @@ node_modules
 .pnp.js
 .env
 
+#hosting
+.firebase
+
 # testing
 /coverage
 
 # production
-/build
+build
 
 # misc
 .DS_Store
