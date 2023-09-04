@@ -149,6 +149,8 @@ p {
   position: relative;
   color: white;
   text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .message {
