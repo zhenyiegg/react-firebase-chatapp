@@ -6,7 +6,7 @@ import { serverTimestamp } from "firebase/firestore";
 
 function ChatRoom() {
     const messagesRef = firestore.collection("messages");
-    const query = messagesRef.orderBy("createdAt").limit(25);
+    const query = messagesRef.orderBy("createdAt", "desc").limit(30);
     const [messages] = useCollectionData(query);
     const [formValue, setFormValue] = useState("");
     const dummy = useRef();
@@ -34,9 +34,12 @@ function ChatRoom() {
         <>
             <main>
                 {messages &&
-                    messages.map((msg, id) => {
-                        return <ChatMessage key={id} message={msg} />;
-                    })}
+                    messages
+                        .slice()
+                        .reverse()
+                        .map((msg, id) => (
+                            <ChatMessage key={id} message={msg} />
+                        ))}
                 <div ref={dummy}></div>
             </main>
 
